@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>First Game</title>
+</head>
+<body>
+    <p1>Closed alpha</p1>
+    <!--- INTERFACE -->
+ <p id="point">Your points:</p>
+<button id="gp" onclick="getPoints()"> Mine coins </button>
+<button id="up1" onclick="upgrade()"> Upgrade your mine  for 25 coins</button>
+<button id="up1" onclick="upgrade2()">Double upgrade for 50 coins</button>
+<p>More upgrades will be avilable soon.</p>
+    <!--- JAVASCRIPT -->
+<script id="jsbin-javascript">
+    //save systemet megcsinalni
+var points = 0;
+var addpoint = 1;
+var name1 = prompt("What is your name?");
+var getnumber1 = prompt("Hello "+name1+" ! How old are you?");
+if (getnumber1 < 12) {
+  alert("You are too young");
+    //kiirja hogy legyel idosebb
+}
+else {
+  alert("You can get in")
+}
+
+function ugps() {
+    if (points > 2.5) {
+        addpoint = addpoint + 0.1;
+        points = points - 2.5;
+        alert("You bought an upgrade")
+    } else {
+        alert("You dont have enought money")
+    }
+}
+
+function upgrade() {
+    if (points > 24) {
+        addpoint = addpoint + 1;
+        points = points -25;
+        alert("You bought an upgrade")
+    } else {
+        alert("You don't have enought coins")
+    }
+}
+function upgrade2() {
+    if (points > 49) {
+        addpoint = addpoint + 2;
+        points = points -50;
+        alert("You bought a double upgrade");
+    } else {
+        alert("You don't have enought money");
+    }
+}
+
+
+function getPoints() {
+    points = points + addpoint;
+   document.getElementById("point").innerHTML = "Your points: "+ points;
+}
+
+
+</script>
+
+    <!--- CSS -->
+<style>
+    p {
+        text-align:center;
+        font-size:24px;
+    }
+    p1 {
+        font-size:10px;
+        padding-left: 1200px;
+    }
+
+    #gp {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 40px 550px;
+        cursor: pointer;
+    }
+    #up1 {
+         background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 40px 500px;
+        cursor: pointer;
+    }
+    </style>
+</body>
+</html>
